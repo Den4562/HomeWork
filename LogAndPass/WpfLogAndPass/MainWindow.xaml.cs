@@ -19,9 +19,7 @@ using System.Threading;
 
 namespace WpfLogAndPass
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -32,17 +30,17 @@ namespace WpfLogAndPass
         }
         private void GoogleBut_Click(object sender, RoutedEventArgs e)
         {
-            // Открываем ссылку в браузере
+            
             Process.Start("https://sites.google.com/new?hl=RU");
         }
         private void FaceBook_Click(object sender, RoutedEventArgs e)
         {
-            // Открываем ссылку в браузере
+            
             Process.Start("https://uk-ua.facebook.com");
         }
         private void Apple_Click(object sender, RoutedEventArgs e)
         {
-            // Открываем ссылку в браузере
+           
             Process.Start("https://www.apple.com");
         }
         private async void Enter_Click(object sender, RoutedEventArgs e)
@@ -53,7 +51,7 @@ namespace WpfLogAndPass
 
             if (login == "Denis" && password == "123")
             {
-                // Отображаем уведомление
+               
                 Snackbar.IsActive = true;
                 
                 await Task.Delay(1000);
