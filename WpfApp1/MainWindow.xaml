@@ -1,0 +1,62 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="MainWindowLoad">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+      
+
+                <DataGrid x:Name="goodsGrid" AutoGenerateColumns="False" ItemsSource="{DynamicResource GoodsCollection.goods}" SelectedCellsChanged="DataGridSelect" IsReadOnly="True"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Назва" Width="1*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Ціна" Width="1*" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Кількість" Width="1*" Binding="{Binding Count}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding ElementName=Good,Path=Button}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        
+        <materialDesign:Card Grid.Column="1" Margin="0,0,0,10" Height="440">
+            <StackPanel Orientation="Vertical" >
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock Text="Назва: "/>
+                    <TextBox x:Name="tbName" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock Text="Цiна:"/>
+                    <TextBox x:Name="tbPrice" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock Text="Кількість товару: "/>
+                    <TextBox x:Name="tbCount" Width="150"/>
+                </StackPanel>
+                <Button Content="Додати" Margin="20 10 20 0" Click="AddGood_Click"/>
+                <Button Content="Видалити" Margin="20 10 20 0" Click="DeleteGood_Click" Background="#B00020"/>
+                <Button Content="Редагувати" Margin="20 10 20 0" Click="EditGood_Click" Background="#424242"/>
+                <Button Content="Зберегти список" Margin="20 10 20 0" Click="SaveList_Click" Background="#424242"/>
+                <Button Content="Завантажити список" Margin="20 10 20 0" Click="LoadList_Click" Background="#424242"/>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+    
+
+</Window>
