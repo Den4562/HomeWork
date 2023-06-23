@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="WpfApp1.Pages.Reg"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.Pages" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+     
+    <Grid>
+
+
+
+
+        <materialDesign:Card  HorizontalAlignment="Center">
+            <Canvas Cursor="" >
+
+            <StackPanel  HorizontalAlignment="Left" Canvas.Top="100" Canvas.Left="-100" VerticalAlignment="Center" Width="200" >
+                <materialDesign:PackIcon Background="White" Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}" Kind="Account" />
+                <TextBox  x:Name="Login" BorderBrush="White"   Style="{StaticResource MaterialDesignFilledTextBox}">
+
+                    <materialDesign:HintAssist.Hint>
+
+                        <TextBlock Text="Login" />
+                    </materialDesign:HintAssist.Hint>
+
+                </TextBox>
+
+            </StackPanel>
+
+                <StackPanel Canvas.Bottom="200"   Canvas.Top="179" Canvas.Left="-100" Width="200" >
+                <materialDesign:PackIcon  Background="White"  Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}" Kind="LockOutline" />
+                <PasswordBox x:Name="Pass" BorderBrush="White" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFilledPasswordBox}" />
+            </StackPanel>
+
+                <Button x:Name="Enter" Canvas.Left="-100" Content="Registration"  Width="200" Height="40" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Click="Enter_Click"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}" Cursor="Hand"  Canvas.Top="260" VerticalAlignment="Top" />
+                <Button x:Name="Back" Canvas.Left="-100" Content="Back"   Width="200" Height="40" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Click="Back_Click"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}" Cursor="Hand"  Canvas.Top="318" VerticalAlignment="Top" />
+
+
+                <materialDesign:Snackbar x:Name="Success" Canvas.Left="-143" Canvas.Top="22">
+                <materialDesign:SnackbarMessage Content="Успешная регистрация!" Foreground="White"/>
+            </materialDesign:Snackbar>
+
+        </Canvas>
+        </materialDesign:Card>
+
+    </Grid>
+        
+</UserControl>
