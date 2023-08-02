@@ -39,7 +39,7 @@ namespace AdoNetApp_1
             set
             {
                 type = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged("Type");
             }
         }
         public string Color {
@@ -47,7 +47,7 @@ namespace AdoNetApp_1
             set
             {
                 color = value;
-                OnPropertyChanged("Surname");
+                OnPropertyChanged("Color");
             }
         }
         public int Callory {
@@ -55,7 +55,7 @@ namespace AdoNetApp_1
             set
             {
                callory = value;
-                OnPropertyChanged("Balans");
+                OnPropertyChanged("Callory");
             }
         }
        
