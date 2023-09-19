@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfHM19.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfHM19"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Диапозон генерации простых чисел:" FontWeight="Bold" FontSize="16"/>
+            <TextBlock Margin="305,-20,10,0" Text="Генерация чисел Фибоначчи:" FontWeight="Bold" FontSize="16"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <TextBlock Text="Від:" VerticalAlignment="Center"/>
+                <TextBox Name="StartTextBox" Width="100" Margin="5,0"/>
+                <TextBlock Text="До:" VerticalAlignment="Center" Margin="10,0"/>
+                <TextBox Name="EndTextBox" Width="100" Margin="5,0"/>
+               
+                <TextBlock Text="Количество чисел Фибоначи:" VerticalAlignment="Center" Margin="30,0"/>
+                <TextBox Name="Fib" Width="100" Margin="5,0"/>
+            </StackPanel>
+            <Button Content="Генерация чисел Фибоначчи" Name="GenerateFibonacciButton" Click="GenerateFibonacciButton_Click" Width="169" Height="30" Margin="0,10,0,0"/>
+            <Button Content="Генерация простых чисел" Name="StartButton" Click="StartButton_Click" Width="151" Height="30" Margin="0,10" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.213"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="Остановить простые числа" Name="StopButton" Click="StopButton_Click" Width="158" Height="30" Margin="-250,5,0,0"/>
+            <Button Content="Остановить генерацию Фибоначи" Name="StopFibonacciButton" Click="StopFibonacci" Width="196" Height="30" Margin="300,-30,0,0"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="250">
+                <ListBox Name="ResultListBox" Margin="0,10"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>
